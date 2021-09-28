@@ -103,10 +103,11 @@
       searchList.querySelectorAll('.unit').forEach(elem => elem.style.display = 'none')
       
       const favCheckbox = document.createElement('dl')
-      favCheckbox.innerHTML = '<dt>お気に入り</dt><dd><input type="checkbox" id="favorite" value="1" checked><label for="favorite">お気に入りで絞り込み</label></dd>'
+      favCheckbox.innerHTML = '<dt>お気に入り</dt><dd><input type="checkbox" id="favorite" value="1"><label for="favorite">お気に入りで絞り込み</label></dd>'
       const checkbox = favCheckbox.querySelector('input')
       checkbox.style.width = 'auto'
       checkbox.style.appearance = 'auto'
+      checkbox.style.webkitAppearance = 'checkbox'
       checkbox.addEventListener('change', ev => {
         queries.favorites = ev.target.checked
         search()
