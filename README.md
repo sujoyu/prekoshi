@@ -13,7 +13,10 @@
 
 1. ブラウザのブックマークを作成し、本来URLを入れる箇所に以下の文字列を保存します。
 2. https://premium-koshigaya.com/ (越谷市プレミアム商品券取扱店舗一覧) に移動します。
-3. 1.で保存したブックマークを開きます。
+3. 1.で保存したブックマークの名前をロケーションバー（URLの入っているところ）に入力します。
+4. 出てきたブックマークをタップします。
+
+![7911](https://user-images.githubusercontent.com/11418915/135105560-d977c5bc-67f6-4f20-8447-8c1107d80133.jpg)
 
 ```
 javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://sujoyu.github.io/prekoshi/index.js';})();
