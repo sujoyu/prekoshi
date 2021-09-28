@@ -12,9 +12,11 @@
 ## 使い方
 
 1. ブラウザのブックマークを作成し、本来URLを入れる箇所に以下の文字列を保存します。
-2. https://premium-koshigaya.com/ (越谷市プレミアム商品券取扱店舗一覧) に移動します。
-3. 1.で保存したブックマークを開きます。
+    ```
+    javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://sujoyu.github.io/prekoshi/index.js';})();
+    ```
+3. https://premium-koshigaya.com/ (越谷市プレミアム商品券取扱店舗一覧) に移動します。
+4. 1.で保存したブックマークの名前をロケーションバー（URLの入っているところ）に入力します。
+5. 出てきたブックマークをタップします。
 
-```
-javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://sujoyu.github.io/prekoshi/index.js';})();
-```
+![7911](https://user-images.githubusercontent.com/11418915/135105870-51eb1657-baa9-44fa-881d-b0e0a31c280e.jpg)
