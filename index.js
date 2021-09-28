@@ -29,7 +29,7 @@
         categories: [],
         tickets: '',
         tickets2: '',
-        favorites: true,
+        favorites: false,
       }
       
       const unitTemplate = searchList.querySelector('.unit').innerHTML;
