@@ -35,7 +35,7 @@
       const unitTemplate = searchList.querySelector('.unit').innerHTML;
       const form = document.getElementById('formSearch')
 
-      function createUnit(name, category, ticket, postNum, address, phone, id) {
+      function createUnit(name, category, ticket, postNum, address, phone, id, site) {
         const unit = document.createElement('div')
         unit.innerHTML = unitTemplate
         unit.classList.add('unit')
@@ -55,10 +55,29 @@
           localStorage.setItem('favorites', JSON.stringify(favorites))
         })
         unit.prepend(favStar)
-        unit.querySelectorAll('a').forEach(node => node.href = href)
+        unit.querySelectorAll('a').forEach(node => {
+          node.href = href
+          node.target = '_blank'
+        })
         unit.querySelector('.name > a').textContent = name
         unit.querySelector('.category > span').textContent = category
         unit.querySelector('.category2 > span').textContent = ticket
+
+        if (site) {
+          const siteLink = document.createElement('a')
+          siteLink.setAttribute('href', site)
+          siteLink.setAttribute('target', '_blank')
+          siteLink.textContent = site
+
+          const siteLinkContainer = document.createElement('div')
+          const siteText = document.createElement('span')
+          siteText.textContent = '公式サイト: '
+
+          siteLinkContainer.append(siteText)
+          siteLinkContainer.append(siteLink)
+
+          unit.querySelector('.text').append(siteLinkContainer)
+        }
         const tds = unit.querySelectorAll('table td')
         tds[0].innerHTML = '〒 ' + postNum + '<br />' + address
         tds[1].textContent = phone
@@ -96,7 +115,7 @@
             (!ticket || obj.ticket.indexOf(ticket) >= 0)
         })
 
-        result.forEach(r => list.append(createUnit(r.name, r.category, r.ticket, r.postNum, r.address, r.phone, r.id)))
+        result.forEach(r => list.append(createUnit(r.name, r.category, r.ticket, r.postNum, r.address, r.phone, r.id, r.site)))
       }
 
       [searchList.querySelector('.num'), searchList.querySelector('.list_pager'), form.querySelector('.btn_search')].forEach(elem => elem.style.display = 'none');
